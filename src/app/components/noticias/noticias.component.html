@@ -1,0 +1,20 @@
+<!-- como esta app sera tambien para web, se debe aplicar un s
+    istema de grid que permita la distribucion del contenido apropiadamente -->
+
+<ion-grid fixed>
+
+    <ion-row>
+        <!-- tamano por defecto size="12"
+        en pantallas grandes 3 colummnas size-lg="3"
+        en pantallas medinas 4 columnas size-md="4"
+        en pantallas pequenas 2 columnas size-sm="6"
+        en pantallas muy pequenas 1 columna size-xs="12" -->
+        <ion-col size="12" size-lg="3" size-md="4" size-sm="6" size-xs="12"
+                *ngFor="let noticia of noticias; let i = index">
+            
+            <app-noticia [noticia]="noticia" [indice]="i" > </app-noticia>
+
+        </ion-col>
+    </ion-row>
+
+</ion-grid>

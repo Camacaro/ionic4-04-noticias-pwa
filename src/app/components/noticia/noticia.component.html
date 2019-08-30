@@ -1,0 +1,21 @@
+<ion-card color="dark"> 
+    <ion-card-header>
+        <ion-card-subtitle> 
+            <!-- estas clases estan ubicadas en el global scss -->
+            <span class="text-primary"> {{ indice + 1 }} </span>
+            <span class="noticias-source-name"> {{ noticia.source.name }}  </span>
+        </ion-card-subtitle>
+
+        <ion-card-title>    {{ noticia.title }}       </ion-card-title>
+    </ion-card-header>
+    <!-- la diferencia entre la etiqueta img y ion-img es que con ion-img se carga 
+    al momento se que se vaya a utilizar, funciona como un lazyload -->
+    <ion-img *ngIf="noticia.urlToImage" 
+        [src]="noticia.urlToImage">
+    </ion-img>
+
+    <ion-card-content>
+        <p> {{ noticia.description }} </p>
+    </ion-card-content>
+    
+</ion-card>
