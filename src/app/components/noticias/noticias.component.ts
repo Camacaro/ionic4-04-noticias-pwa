@@ -12,6 +12,7 @@ export class NoticiasComponent implements OnInit {
      * Con esto recibo una variable  llamada noticas
      */
     @Input() noticias: Article[] = [];
+    @Input() enFavoritos = false;
 
     constructor() { }
 

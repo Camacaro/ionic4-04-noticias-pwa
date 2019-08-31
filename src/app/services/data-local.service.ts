@@ -40,4 +40,12 @@ export class DataLocalService {
         }
 
     }
+
+    BorrarNoticia( noticia: Article ) {
+
+        /** Esto me va a retornar todas las noticias que sean diferentes al titulo de la noticia pasada */
+        this.noticias = this.noticias.filter( noti => noti.title !== noticia.title );
+
+        this.storage.set('favoritos', this.noticias);
+    }
 }
