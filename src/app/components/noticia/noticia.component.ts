@@ -45,6 +45,7 @@ export class NoticiaComponent implements OnInit {
                 handler: () => {
                     console.log('Borrar Favorito');
                     this.dataLocalService.BorrarNoticia( this.noticia );
+                    this.dataLocalService.alertInformativa( 'Se ha borrado de favoritos' );
                 }
             };
 
@@ -57,6 +58,7 @@ export class NoticiaComponent implements OnInit {
                 handler: () => {
                     console.log('Share Favorito');
                     this.dataLocalService.guardarNoticia( this.noticia );
+                    this.dataLocalService.alertInformativa( 'Se ha guardado en favoritos' );
                 }
             };
         }

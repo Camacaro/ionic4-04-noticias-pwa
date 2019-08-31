@@ -19,7 +19,8 @@
     al momento se que se vaya a utilizar, funciona como un lazyload -->
     <ion-img *ngIf="noticia.urlToImage" 
         [src]="noticia.urlToImage"
-        (click)="abrirNoticia()">
+        (click)="abrirNoticia()"
+        class="animated fadeIn fast">
     </ion-img>
 
     <ion-card-content>
