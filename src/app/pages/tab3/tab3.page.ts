@@ -8,6 +8,12 @@ import { DataLocalService } from '../../services/data-local.service';
 })
 export class Tab3Page {
 
+    /** Bloquear el movimiento del Slide */
+    slidesOpts = {
+        allowSlidePrev: false,
+        allowSlideNext: false
+    }
+
     constructor(public dataLocalService: DataLocalService) {}
 
 
