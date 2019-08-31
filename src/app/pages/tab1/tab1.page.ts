@@ -30,7 +30,7 @@ export class Tab1Page implements OnInit {
 
         this.noticiasService.getTopHeadlines().subscribe(
             respuesta => {
-                console.log(respuesta);
+                // console.log(respuesta);
 
                 /**
                  * Lo trabajo de este modo para ir agregando elementos a la noticias

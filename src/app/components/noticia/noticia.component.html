@@ -4,14 +4,22 @@
             <!-- estas clases estan ubicadas en el global scss -->
             <span class="text-primary"> {{ indice + 1 }} </span>
             <span class="noticias-source-name"> {{ noticia.source.name }}  </span>
+
+            <div class="noticia-more">
+                <ion-button fill="clear" (click)="lanzarMenu()"> 
+                    <ion-icon slot="icon-only" name="more"> </ion-icon>
+                </ion-button>
+            </div>
+
         </ion-card-subtitle>
 
-        <ion-card-title>    {{ noticia.title }}       </ion-card-title>
+        <ion-card-title (click)="abrirNoticia()">    {{ noticia.title }}       </ion-card-title>
     </ion-card-header>
     <!-- la diferencia entre la etiqueta img y ion-img es que con ion-img se carga 
     al momento se que se vaya a utilizar, funciona como un lazyload -->
     <ion-img *ngIf="noticia.urlToImage" 
-        [src]="noticia.urlToImage">
+        [src]="noticia.urlToImage"
+        (click)="abrirNoticia()">
     </ion-img>
 
     <ion-card-content>

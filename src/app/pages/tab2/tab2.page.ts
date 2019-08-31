@@ -34,7 +34,7 @@ export class Tab2Page implements OnInit {
         this.cargarNoticia( event.detail.value );
     }
 
-    cargarNoticia( categoria: string ) {
+    cargarNoticia( categoria: string, event? ) {
 
         this.noticiasService.getTopHeadlinesCategoria( categoria ).subscribe(
             respuesta => {
@@ -45,8 +45,21 @@ export class Tab2Page implements OnInit {
                  * del arreglo general respuesta.articles e irlo agregando uno a uno
                  */
                 this.noticias.push( ...respuesta.articles );
+
+                if ( event ) {
+                    event.target.complete();
+
+                    if ( respuesta.articles.length === 0 ) {
+
+                        event.target.complete();
+                    }
+                }
             }
         );
+    }
+
+    loadData( event ) {
+        this.cargarNoticia( this.segment.value, event );
     }
 
 }
